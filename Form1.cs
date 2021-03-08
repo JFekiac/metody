@@ -45,10 +45,22 @@ namespace metody
             return vysledek;
         }
 
+        double faktorial(double x)
+        {
+            double vysledek = 1;
+            while (x > 0)
+            {
+                vysledek *= x;
+                --x;
+            }
+            return vysledek;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             label1.Text = "Vzdalenost bodu: " + Vzdalenost(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text), int.Parse(textBox4.Text));
             label2.Text = "Mocnina: " + Mocnina(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
+            label3.Text = "Faktorial: " + faktorial(int.Parse(textBox1.Text)).ToString();
         }
     }
 }
