@@ -67,6 +67,17 @@ namespace metody
             return true;
         }
 
+        int CifLichSoucet(int x)
+        {
+            int soucet = 0;
+            while (x > 0)
+            {
+                if ((x % 10) % 2 != 0) soucet += x % 10;
+                x /= 10;
+            }
+            return soucet;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             label1.Text = "Vzdalenost bodu: " + Vzdalenost(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text), int.Parse(textBox4.Text));
@@ -74,6 +85,7 @@ namespace metody
             label3.Text = "Faktorial: " + faktorial(int.Parse(textBox7.Text)).ToString();
             if (prvocislo(int.Parse(textBox8.Text))) label4.Text = "ANO, je to prvocislo";
             else label4.Text = "NE, neni to prvocislo";
+            label5.Text = "Soucet lichych cifer: " + CifLichSoucet(int.Parse(textBox9.Text));
         }
     }
 }
